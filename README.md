@@ -15,6 +15,10 @@ A lightweight web application built with Flask that generates colorful abstract 
 | Example 1 | Example 2 | Example 3 |
 |-----------|-----------|-----------|
 | ![](images/ascii-art_1.png) | ![](images/ascii-art_2.png) | ![](images/ascii-art_3.png) |
+<<<<<<< HEAD
+=======
+| ![](images/ascii-art%20(3).png) | ![](images/ascii-art%20(5).png) | ![](images/ascii-art%20(6).png) |
+>>>>>>> 99532da44b6038fc2f3a6a446416743765293cc5
 
 ---
 
