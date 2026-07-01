@@ -15,7 +15,7 @@ A lightweight web application built with Flask that generates colorful abstract 
 
 | Example 1 | Example 2 | Example 3 |
 |-----------|-----------|-----------|
-| ![](images/ascii-art%20(4).png) | ![](images/ascii-art%20(5).png) | ![](images/ascii-art%20(6).png) |
+| ![](images/ascii-art_1.png) | ![](images/ascii-art_2.png) | ![](images/ascii-art_3.png) |
 
 ---
 
@@ -99,9 +99,9 @@ ArtGenerator/
 │   └── index.html
 │
 ├── images/
-│   ├── ascii-art (4).png
-│   ├── ascii-art (5).png
-│   └── ascii-art (6).png
+│   ├── ascii-art_1.png
+│   ├── ascii-art_2.png
+│   └── ascii-art_3.png
 │
 ├── app.py
 └── README.md
