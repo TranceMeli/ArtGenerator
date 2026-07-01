@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Abstract ASCII Art Generator
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -15,7 +14,7 @@ A lightweight web application built with Flask that generates colorful abstract 
 
 | Example 1 | Example 2 | Example 3 |
 |-----------|-----------|-----------|
-| ![](images/ascii-art%20(4).png) | ![](images/ascii-art%20(5).png) | ![](images/ascii-art%20(6).png) |
+| ![](images/ascii-art%20(3).png) | ![](images/ascii-art%20(5).png) | ![](images/ascii-art%20(6).png) |
 
 ---
 
@@ -99,7 +98,7 @@ ArtGenerator/
 │   └── index.html
 │
 ├── images/
-│   ├── ascii-art (4).png
+│   ├── ascii-art (3).png
 │   ├── ascii-art (5).png
 │   └── ascii-art (6).png
 │
@@ -123,6 +122,3 @@ This project is licensed under the MIT License.
 
 <img width="936" height="442" alt="image" src="https://github.com/user-attachments/assets/fa1e944e-0a55-4952-a93e-a2606e1259fb" />
 <img width="934" height="336" alt="Screenshot 2025-09-06 005145" src="https://github.com/user-attachments/assets/ae9359eb-a9ce-4651-a50e-8442338e6c55" />
-
-
->>>>>>> 71aa662a78cbd7c7a20a279bfafe992b88b2994e
