@@ -1,48 +1,247 @@
-body {
-    font-family:'Courier New', Courier, monospace;
-    background-color: rgb(228, 228, 228);
+/* =========================================
+   1. THEMES & FARBPALETTEN
+   ========================================= */
+
+/* Standard-Theme (Cyberpunk Neon) */
+:root {
+    --bg-color: #0f111a;
+    --card-bg: #1e2235;
+    --accent-color: #00f2fe;
+    --accent-hover: #00b8d4;
+    --success-color: #39ff14;
+    --success-hover: #2ec20e;
+    --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
+    --output-bg: #05070f;
 }
 
-.container{
+/* Theme: Classic Hacker */
+body.theme-hacker {
+    --bg-color: #060a06;
+    --card-bg: #0d140d;
+    --accent-color: #00ff66;
+    --accent-hover: #00cc52;
+    --success-color: #33ff77;
+    --success-hover: #22aa4e;
+    --text-color: #d1ffd9;
+    --text-muted: #4e7353;
+    --output-bg: #020402;
+}
+
+/* Theme: Vaporwave */
+body.theme-vaporwave {
+    --bg-color: #140924;
+    --card-bg: #23123a;
+    --accent-color: #ff007f;
+    --accent-hover: #e60072;
+    --success-color: #00f2fe;
+    --success-hover: #00b8d4;
+    --text-color: #fae6ff;
+    --text-muted: #8b68b0;
+    --output-bg: #0b0414;
+}
+
+/* Theme: Dracula */
+body.theme-dracula {
+    --bg-color: #282a36;
+    --card-bg: #44475a;
+    --accent-color: #8be9fd;
+    --accent-hover: #62d6ee;
+    --success-color: #50fa7b;
+    --success-hover: #40c762;
+    --text-color: #f8f8f2;
+    --text-muted: #6272a4;
+    --output-bg: #191a21;
+}
+
+/* Theme: Amber CRT */
+body.theme-amber {
+    --bg-color: #110b00;
+    --card-bg: #221600;
+    --accent-color: #ffb000;
+    --accent-hover: #e69d00;
+    --success-color: #ffcc66;
+    --success-hover: #ffaa00;
+    --text-color: #ffe6b3;
+    --text-muted: #885c00;
+    --output-bg: #050300;
+}
+
+/* =========================================
+   2. GRUNDLAYOUT & TYPOGRAFIE
+   ========================================= */
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    gap: 25px;
 }
 
-h1{
-    background-color: orange;
-    padding: 10px;
-    border: solid 2px #292929;
-}
-label {
-    font-size: 1.5rem;
-    font-weight: bold;
+h1 {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
-input, select {
-    padding: 10px;
+/* =========================================
+   3. FORMULAR (GRID-LAYOUT)
+   ========================================= */
+
+form {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     width: 100%;
     box-sizing: border-box;
 }
-#output {
-    background-color: #292929;
-    color: white;
-    padding: 10px;
-    font-size: 30px;
-    width: auto;
-    height: auto;
-    white-space: pre;
-    overflow-x: auto;
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
 }
 
-button{
-    padding: 20px;
-    background-color: orange;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+label {
+    font-size: 0.95rem;
     font-weight: bold;
-    font-size: 20px;
+    color: var(--text-muted);
+}
+
+input, select {
+    padding: 12px;
+    background-color: var(--bg-color);
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
     width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+}
+
+/* =========================================
+   4. BUTTONS
+   ========================================= */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.btn-generate {
+    grid-column: span 3;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-generate:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+    transform: translateY(-1px);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.btn-action {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--text-muted);
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: 6px;
+}
+
+.btn-action:hover {
+    border-color: var(--success-color);
+    color: var(--success-color);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+/* =========================================
+   5. OUTPUT (ERGEBNIS-FENSTER)
+   ========================================= */
+
+#output {
+    background-color: var(--output-bg);
+    color: #ffffff;
+    padding: 25px;
+    font-size: 15px;
+    line-height: 1.2;
+    border-radius: 12px;
+    border: 1px dashed #334155;
+    white-space: pre;
+    overflow-x: auto;
+    min-height: 150px;
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.6);
+    width: fit-content; 
+    max-width: 100%;
+    margin: 0 auto; 
+    box-sizing: border-box;
+}
+
+.exporting {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================================
+   6. RESPONSIVE DESIGN (MOBILE)
+   ========================================= */
+
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+    .btn-generate {
+        grid-column: span 1;
+    }
 }

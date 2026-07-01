@@ -8,19 +8,12 @@ PADDING = 4
 def generate_ascii_art(char_count, line_count, base, space_count):
     base += " " * space_count
 
-    def lines_line():
-        return "[" + "-" * (char_count + 2 * PADDING) + "]"
+    output = []
 
-    def character_picture():
-        character_rnd = "".join(random.choices(base, k=char_count))
-        return "|" + " " * PADDING + character_rnd + " " * PADDING + "|"
-
-    output_lines = [lines_line()]
     for _ in range(line_count):
-        output_lines.append(character_picture())
-    output_lines.append(lines_line())
-    
-    return "\n".join(output_lines)
+        output.append("".join(random.choices(base, k=char_count)))
+
+    return "\n".join(output)
 
 @app.route("/")
 def hello_world():

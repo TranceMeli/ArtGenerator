@@ -4,40 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ascii Art Generator</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-    <h1>Welcome to the Abstract Ascii Art Generator</h1>
-    <form id="inputForm">
-        <label for="chars">Enter the chars you want to use</label><br>
-        <input type="text" id="chars" placeholder="oo #*"><br>
+        <h1>Abstract ASCII Art Generator</h1>
+        
+        <form id="inputForm">
+            <div class="form-group">
+                <label for="themeSelect">UI Theme</label>
+                <select id="themeSelect">
+                    <option value="cyberpunk">Cyberpunk Neon (Default)</option>
+                    <option value="hacker">Classic Hacker</option>
+                    <option value="vaporwave">Vaporwave</option>
+                    <option value="dracula">Dracula Theme</option>
+                    <option value="amber">Amber CRT</option>
+                </select>
+            </div>
 
-        <label for="themes">Choose your theme</label>
-        <select name="characters" id="characters">
-            <option value="01">digital binary</option>
-            <option value="-=|#█▓▒░">bars and boxes -=|#█▓▒░"</option>
-            <option value=".:;*~">fuzzy, static, grainy .:;*~"</option>
-            <option value="@#%&*+=-:. ">soft gradients, shading @#%&*+=-:. </option>
-            <option value="@&%$#!?()">symbols & glyphs @&%$#!?()</option>
-            <option value="<>[]{}|/\\-=_+">technical, digital <>[]{}|/\\-=_+</option>
-            <option value="`'"/.,;_~^">organic, hand drawn feel `'"/.,;_~^</option>
-            <option></option>
-        </select>
+            <div class="form-group">
+                <label for="chars">Chars</label>
+                <input type="text" id="chars" placeholder="oo #*">
+            </div>
 
-        <label for="charCount">Enter how many chars</label><br>
-        <input type="number" id="charCount" placeholder="ex. 30"><br>
+            <div class="form-group">
+                <label for="characters">Theme</label>
+                <select name="characters" id="characters">
+                    <option value="01">digital binary (01)</option>
+                    <option value="-=|#█▓▒░">bars and boxes (-=|#█▓▒░)</option>
+                    <option value=".:;*~">fuzzy, static, grainy (.:;*~)</option>
+                    <option value="@#%&*+=-:. ">soft gradients (@#%&*+=-:. )</option>
+                    <option value="@&%$#!?()">symbols & glyphs (@&%$#!?())</option>
+                    <option value="&lt;&gt;[]{}|/\\-=_+">technical, digital (&lt;&gt;[]{}|/\-=_+)</option>
+                    <option value="`'&#34;/.,;_~^">organic, hand drawn feel (`'"/.,;_~^)</option>
+                </select>
+            </div>
 
-        <label for="lineCount">Number of lines</label><br>
-        <input type="number" id="lineCount" placeholder="ex. 10"><br>
+            <div class="form-group">
+                <label for="charCount">How many chars</label>
+                <input type="number" id="charCount" placeholder="ex. 30">
+            </div>
 
-        <label for="spaceCount">Enter how many gaps</label><br>
-        <input type="number" id="spaceCount"><br>
+            <div class="form-group">
+                <label for="lineCount">How many lines</label>
+                <input type="number" id="lineCount" placeholder="ex. 10">
+            </div>
 
-        <button type="submit">Generate</button>
-    </form>
-    <div id="output" class="result">Result incoming!</div>
+            <div class="form-group">
+                <label for="spaceCount">How many gaps</label>
+                <input type="number" id="spaceCount" placeholder="ex. 5">
+            </div>
+
+            <button type="submit" class="btn-generate">Generate</button>
+        </form>
+
+        <div class="action-buttons">
+            <button id="copyBtn" class="btn-action">📋 Kopieren</button>
+            <button id="saveBtn" class="btn-action">💾 Speichern (.png)</button>
+        </div>
+
+        <div id="output" class="result">Result incoming!</div>
+        
     </div>
+
     <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
